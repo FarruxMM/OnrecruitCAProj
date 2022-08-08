@@ -1,0 +1,75 @@
+﻿@model UserDTO
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+
+            <th>
+                Id
+            </th>
+
+            <th>
+                UserName
+            </th>
+
+            <th>
+                Email
+            </th>
+
+            <th>
+                FullName
+            </th>
+
+            <th>
+                IsActive
+            </th>
+
+
+
+
+            <th>ChangeStatus</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+
+            <td>
+                @Model.Id
+            </td>
+
+            <td>
+                @Model.UserName
+            </td>
+
+            <td>
+                @Model.Email
+            </td>
+
+            <td>
+                @Model.FullName
+            </td>
+
+            <td>
+                @Model.IsActive
+            </td>
+
+            <td>
+                <a asp-action="ChangeStatusConfirmed" asp-route-id="@Model.Id" class="btn btn-warning btn-circle">
+                    <i class="fas fa-fw fa-wrench"></i>
+                </a> |
+
+            </td>
+        </tr>
+
+    </tbody>
+</table>
+

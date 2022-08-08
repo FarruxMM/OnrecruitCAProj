@@ -1,0 +1,61 @@
+.main-nav {
+    background-color: black;
+    z-index: 999999999999;
+}
+
+ .logo {
+     width: 100%;
+     height: 70px;
+ }
+
+.for-user {
+    list-style: none;
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+    margin-bottom:0;
+}
+
+.for-user i {
+    color: #fe4a55;
+    font-size: larger;
+}
+
+.for-user a:hover {
+    color: #fe4a55;
+}
+
+.nav-item {
+    color: white;
+}
+
+.nav-item a {
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.navbar-nav .nav-item:hover a {
+    color: #fe4a55;
+}
+
+.right-login {
+    color: white;
+    text-decoration: none;
+}
+
+.right-login i{
+   font-size:larger;
+}
+
+.right-login:hover {
+   color: #fe4a55;
+   text-decoration: none;
+}
+
+@media only screen and (max-width: 767px) {
+    .customToggler {
+        opacity: 0;
+        max-height: 0;
+    }
+}

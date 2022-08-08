@@ -1,0 +1,470 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Tiro Kannada', Verdana, Tahoma, sans-serif;
+}
+
+.main-nav {
+    background: transparent;
+    padding-top: 10px;
+    transition: 0.5s all ease;
+}
+
+
+.scrolled {
+    background: #161616;
+    box-shadow: 0px 0px 20px 0px #6363636b;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+
+.loader {
+    position: fixed;
+    z-index: 99999;
+    background: #fe4a55;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+}
+
+.title-details {
+    background-image: url(../img/page-title-bg.jpg);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    position: relative;
+    height: 400px;
+    z-index: 1;
+}
+
+.just {
+    padding-top: 100px;
+}
+
+.title-details:before {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: #000;
+    opacity: .70;
+    z-index: -1;
+}
+
+.d-table {
+    width: 100%;
+    height: 100%;
+    display: table !important;
+}
+
+.d-table-cell {
+    vertical-align: middle;
+    display: table-cell !important;
+}
+
+.title-details .left {
+    margin-bottom: 30px;
+    margin-left: 15px;
+}
+
+.title-details .left img {
+    margin-bottom: 15px;
+    height:100px;
+    width:100px;
+    border-radius:6px;
+}
+
+.title-details .left h2 {
+    margin-bottom: 15px;
+    color: #fff;
+    font-size: 35px;
+    line-height: 1.4;
+    font-weight: 700;
+}
+
+.title-details .left ul li {
+    list-style-type: none;
+    display: inline-block;
+    color: #d9d9d9;
+    margin-right: 20px;
+}
+
+.title-details.two .left ul li i {
+    display: inline-block;
+    font-size: 20px;
+    position: relative;
+    top: 3px;
+    margin-right: 3px;
+}
+
+.left ul li:last-child i {
+    color: #d9d9d9;
+}
+
+.left ul li:last-child {
+    margin-right: 0;
+    color: #00d2ff;
+}
+
+.right {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.right:hover {
+  color:white;
+}
+
+.right .link {
+    padding-left: 35px;
+    padding-right: 85px;
+    margin-bottom: 15px;
+    text-decoration:none;
+}
+
+.link {
+    background-color: #fe4a55;
+    color: #fff;
+    height: 50px;
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-left: 20px;
+    padding-right: 65px;
+    border-radius: 5px;
+    line-height: 50px;
+    display: inline-block;
+    position: relative;
+}
+
+.link i {
+    display: inline-block;
+    height: 50px;
+    line-height: 50px;
+    padding-left: 12px;
+    padding-right: 12px;
+    font-size: 20px;
+    color: #fff;
+    background-color: #c02932;
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-radius: 0 5px 5px 0;
+}
+
+.right ul li {
+    list-style-type: none;
+    display: inline-block;
+    padding-right: 10px;
+    border-right: 1px solid #fff;
+    margin-right: 10px;
+}
+
+.right ul li a {
+    display: block;
+    color: #fff;
+}
+
+#about-job {
+    padding-top: 100px;
+    padding-bottom: 100px;
+    background: #1d1d1d;
+}
+
+#about-job .details-item .details-inner {
+    margin-bottom: 30px;
+}
+
+.details-item .details-inner h3 {
+    font-size: 22px;
+    color: #ffffff !important;
+    margin-bottom: 10px;
+    line-height: 1.4;
+    font-weight: 700;
+}
+
+.details-inner ul {
+    margin: 0;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.details-inner ul li {
+    list-style-type: none;
+    display: block;
+    margin-bottom: 10px;
+    color: #ffffff;
+    font-size: 15px;
+}
+
+.details-inner ul li i {
+    display: inline-block;
+    color: #fe4a55;
+    font-size: 18px;
+    position: relative;
+    top: 2px;
+    margin-right: 3px;
+}
+
+.details-item .details-inner p {
+    margin-bottom: 0;
+    color: #ffffff !important;
+    line-height: 1.8;
+}
+
+.details-inner .job-details-slider {
+    margin-top: 20px;
+}
+
+.owl-carousel .owl-stage-outer {
+    position: relative;
+    overflow: hidden;
+}
+
+.owl-theme .owl-nav {
+    margin-top: 10px;
+    text-align: center;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.job-details-area .details-item .details-inner .owl-prev {
+    position: absolute;
+    top: 40%;
+    left: 35px;
+    color: #fff !important;
+    font-size: 35px !important;
+    z-index: 1;
+    -webkit-transition: 0.5s all ease;
+    transition: 0.5s all ease;
+    opacity: 0;
+}
+
+.widget-area .widget-item {
+    border-radius: 5px;
+    border: 1px dashed #fe4a55;
+    padding: 25px 30px 30px;
+    margin-bottom: 30px;
+}
+
+.widget-item h3 {
+    color: #ffffff !important;
+    font-size: 20px;
+    margin-bottom: 30px;
+    position: relative;
+    border-bottom: 1px solid #e1e1e1;
+    padding-bottom: 15px;
+}
+
+.widget-item h3:before {
+    position: absolute;
+    content: '';
+    width: 50px;
+    height: 3px;
+    bottom: -2px;
+    left: 0;
+    background-color: #fe4a55;
+    border-radius: 0 50% 50% 0;
+}
+
+.widget-area .job form {
+    position: relative;
+}
+
+.widget-area .job form label {
+    margin-bottom: 0;
+    position: absolute;
+    top: 13px;
+    left: 15px;
+}
+
+.job form .form-control {
+    background-color: #1d1d1d;
+    color: #ffffff;
+    height: 45px;
+    border-radius: 5px;
+    border: 1px solid #e1e1e1;
+    padding-left: 38px;
+    font-size: 14px;
+    -webkit-transition: 0.5s all ease;
+    transition: 0.5s all ease;
+    margin-bottom: 15px;
+}
+
+.widget-area .job form .btn {
+    width: 100%;
+    display: block;
+    border-radius: 5px;
+    height: 45px;
+    color: #fff;
+    background-color: #fe4a55;
+    -webkit-transition: 0.5s all ease;
+    transition: 0.5s all ease;
+}
+
+.widget-area .widget-item {
+    border-radius: 5px;
+    border: 1px dashed #fe4a55;
+    padding: 25px 30px 30px;
+    margin-bottom: 30px;
+}
+
+.widget-area .widget-item h3 {
+    color: #ffffff;
+    font-size: 20px;
+    margin-bottom: 30px;
+    position: relative;
+    border-bottom: 1px solid #e1e1e1;
+    padding-bottom: 15px;
+}
+
+.widget-item h3:before {
+    position: absolute;
+    content: '';
+    width: 50px;
+    height: 3px;
+    bottom: -2px;
+    left: 0;
+    background-color: #fe4a55;
+    border-radius: 0 50% 50% 0;
+}
+
+.information ul li {
+    list-style-type: none;
+    display: block;
+    position: relative;
+    padding-left: 50px;
+    border-bottom: 1px solid #e1e1e1;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+
+.information ul li img {
+    position: absolute;
+    top: 3px;
+    left: 0;
+}
+
+.information ul li h4 {
+    font-size: 16px;
+    color: #ffffff;
+    margin-bottom: 5px;
+}
+
+.information ul li span {
+    display: block;
+    color: #7d789b;
+    font-size: 14px;
+}
+
+.owner .top {
+    position: relative;
+    padding: 30px 25px 30px;
+    background-color: #252525;
+    padding-left: 105px;
+    border: 1px dashed #fe4a55;
+    border-radius: 5px 5px 0 0;
+}
+
+.owner .top img {
+    position: absolute;
+    top: 25px;
+    left: 30px;
+}
+
+.owner .top h3 {
+    color: #ffffff;
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+
+.widget-area .owner .top i {
+    color: #ffffff;
+    display: inline-block;
+    margin-right: 5px;
+    font-size: 18px;
+    position: relative;
+    top: 1px;
+}
+
+.owner .top span {
+    display: inline-block;
+    color: #fff;
+}
+
+.information ul li h4 {
+    font-size: 16px;
+    color: #ffffff;
+    margin-bottom: 5px;
+}
+
+.widget-area .owner .widget-item a {
+    display: block;
+    color: #ffffff;
+}
+
+#copyright {
+    background-color: #0e0e0e;
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+    #copyright .copyright-item ul {
+        margin: 0;
+        padding: 0;
+    }
+
+  #copyright .copyright-item ul li {
+            list-style-type: none;
+            display: inline-block;
+            margin-right: 10px;
+}
+
+  #copyright .copyright-item ul li a i {
+      line-height: 30px;
+  }
+
+  #copyright .copyright-item ul li a {
+      display: block;
+      width: 30px;
+      height: 30px;
+      text-align: center;
+      color: #fff;
+      background-color: #3b5998;
+      font-size: 18px;
+      border-radius: 50%;
+  }
+
+  #copyright .copyright-item ul li:nth-child(4) a {
+      background-color: #ff0000;
+  }
+
+   #copyright .copyright-item ul li:nth-child(5) a {
+       background-color: #c80000;
+       margin-bottom: 0;
+   }
+
+.copyright-area .copyright-item p {
+    margin-bottom: 0;
+    text-align: right;
+    color: #ffffff !important;
+    line-height: 1.8;
+}
+
+.side-nav .cmn-btn {
+    background-color: #fe4a55;
+    color: #fff;
+    height: 50px;
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-left: 20px;
+    margin-left: 10px;
+    padding-right: 65px;
+    border-radius: 5px;
+    line-height: 50px;
+    display: inline-block;
+    position: relative;
+    text-decoration: none;
+}

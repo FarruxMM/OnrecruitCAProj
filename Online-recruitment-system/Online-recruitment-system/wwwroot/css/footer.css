@@ -1,0 +1,117 @@
+.footer {
+    /* background-color: #191918; */
+    background-color: #000;
+    padding-bottom: 70px;
+    padding-top: 100px;
+}
+
+.footer-item {
+    margin-bottom: 30px;
+}
+
+.footer-item .footer-left .logo {
+    display: block;
+    margin-bottom: 25px;
+    padding-bottom: 30px;
+    text-decoration: none;
+    list-style-type: none;
+}
+
+.logo {
+    border-radius:7px;
+    list-style: none;
+    color: white;
+}
+
+.footer-item .footer-left .logo img {
+    height: 90px;
+    padding-bottom: 40px;
+}
+
+.footer-item .footer-left ul {
+    margin: 0;
+    padding: 0;
+}
+
+.footer-item .footer-left ul li {
+    list-style-type: none;
+    display: block;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.footer-item ul li a:hover {
+    color: #fe4a55;
+}
+
+.footer-item .footer-left ul li a {
+    list-style-type: none;
+    display: inline-block;
+    color: #fff;
+}
+
+.footer-item .footer-left ul li span {
+    display: inline-block;
+    font-weight: 500;
+    margin-right: 3px;
+    color: #fe4a55;
+}
+
+.footer-item h3 {
+    color: #fff;
+    font-size: 20px;
+    margin-bottom: 25px;
+    line-height: 1.4;
+    font-weight: 700;
+}
+
+.footer-service ul li {
+    color: #ffffff;
+    list-style-type: none;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.footer-service ul li a {
+    color: #ffffff;
+    transition: 0.7s;
+    text-decoration: none;
+}
+
+.footer-newsletter p {
+    color: #ffffff !important;
+    line-height: 1.8;
+    margin-bottom: 1rem;
+    margin-top: 0;
+}
+
+.footer-newsletter form {
+    position: relative;
+}
+
+.footer-item .footer-newsletter form .form-control {
+    background-color: #252525;
+    color: #ffffff;
+    height: 55px;
+    border-radius: 5px;
+    border: 1px dashed #acacac;
+    padding-left: 15px;
+    -webkit-transition: 0.5s all ease;
+    transition: 0.5s all ease;
+    font-size: 15px;
+}
+
+.footer-item .footer-newsletter form .btn {
+    padding: 0;
+    border-radius: 0 5px 5px 0;
+    color: #fff;
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    opacity: 1;
+    -webkit-transition: 0.5s all ease;
+    transition: 0.5s all ease;
+    font-size: 22px;
+    line-height: 20px;
+    padding: 11px 16px 12px;
+}

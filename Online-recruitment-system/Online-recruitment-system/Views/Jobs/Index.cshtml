@@ -1,0 +1,606 @@
+﻿@model JobViewModel
+
+<div class="page-title-area">
+    <div class="d-table">
+        <div class="d-table-cell">
+            <div class="container">
+                <div class="title-item">
+                    <h2>Jobs</h2>
+                    <ul>
+                        <li>
+                            <img src="img/title-img-two.png" alt="Image" />
+                            <a asp-action="Index" asp-controller="Home">Home</a>
+                        </li>
+                        <li>
+                            <span>/</span>
+                        </li>
+                        <li>Jobs</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section id="jobs">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <ul class="job-list-title align-items-center">
+                    <li>
+                        <a href="#">Results Found <span>(@Model.Jobs.Count())</span></a>
+                        <a class="rss" href="#"> <i class="bi bi-rss"></i>RSS Feed </a>
+                    </li>
+                    <li>
+                        <span class="sort">Sort By:</span>
+                        <form>
+                            <div class="form-group">
+                                <select class="form-control form-control-sm mySelect" asp-items="@Model.Categories">
+
+                                    <option selected disabled>Category</option>
+
+                                </select>
+                            </div>
+                        </form>
+                    </li>
+                </ul>
+
+
+                <div class="wrapper_vacancies">
+
+
+                    @foreach (var item in Model.Jobs)
+                    {
+                        <div class="vacancy-item">
+                            @if (Model.UserType == 1)
+                            {
+                                <a asp-action="JobDetails" asp-controller="Jobs" asp-route-id="@item.Id" asp-route-check="true">
+                                    <img src="~/img/companyimg/@item.Image" alt="Employer" style="width:70px;height:70px; border-radius:5px" />
+                                    <h3>@item.PositionName</h3>
+                                    <ul>
+                                        <li>
+                                            <i class="bi bi-geo-alt"></i>
+                                            @item.Location
+                                        </li>
+                                        <li>
+                                            @if (DateTime.Now.Subtract(item.CreateDate).Days == 0)
+                                            {
+                                                <p>1 day ago;</p>
+                                            }
+                                            else
+                                            {
+                                                @DateTime.Now.Subtract(item.CreateDate).Days <span>day ago;</span>
+
+                                            }
+                                        </li>
+                                    </ul>
+                                    <p>
+                                        We are Looking for a skilled @item.PositionName amet conscu adiing
+                                        elitsed do eusmod tempor
+                                    </p>
+                                    <span class="span-one">@item.Category.Name</span>
+                                    <span class="span-two">@item.JobType.Type</span>
+                                </a>
+                            }
+                            @if (Model.UserType == 2)
+                            {
+                                <a asp-action="JobDetails" asp-controller="Jobs" asp-route-id="@item.Id" asp-route-check="false">
+                                    <img src="~/img/companyimg/@item.Image" alt="Employer" style="width:70px;height:70px; border-radius:5px" />
+                                    <h3>@item.PositionName</h3>
+                                    <ul>
+                                        <li>
+                                            <i class="bi bi-geo-alt"></i>
+                                            @item.Location
+                                        </li>
+                                        <li>
+                                            @if (DateTime.Now.Subtract(item.CreateDate).Days == 0)
+                                            {
+                                                <p>Today</p>
+                                            }
+                                            else
+                                            {
+                                                @DateTime.Now.Subtract(item.CreateDate).Days <span>day ago;</span>
+
+                                            }
+                                        </li>
+                                    </ul>
+                                    <p>
+                                        We are Looking for a skilled @item.PositionName amet conscu adiing
+                                        elitsed do eusmod tempor
+                                    </p>
+                                    <span class="span-one">@item.Category.Name</span>
+                                    <span class="span-two">@item.JobType.Type</span>
+                                </a>
+                            }
+                        </div>
+
+                    }
+
+                </div>
+
+
+
+                <div class="pagination-items">
+                    <ul>
+                        <li>
+                            <a href="#">Prev</a>
+                        </li>
+                        @for (int i = 1; i <= Model.Pagination.TotalPage; i++)
+                        {
+                            if (i == Model.Pagination.CurrentPage)
+                            {
+                                <li class="page-item disabled">
+                                    <a asp-action="Index" asp-route-page="@i">@i</a>
+                                </li>
+                            }
+                            else
+                            {
+                                <li class="page-item ">
+                                    <a asp-action="Index" asp-route-page="@i">@i</a>
+                                </li>
+                            }
+
+                        }
+                        <li>
+                            <a href="#">Next</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="right-part">
+                    <div class="job">
+                        <h3>Find A Job</h3>
+                        <form asp-action="SendMessage" method="post">
+                            <label>
+                                <i class="bi bi-send"></i>
+                            </label>
+                            <input type="email"
+                                   name="email"
+                                   class="form-control"
+                                   placeholder="Email address" />
+                            <button type="submit" class="btn">Get A Job Alert</button>
+                        </form>
+                    </div>
+                    <div class="job-list-all">
+                        <div class="search">
+                            <h3>Search Keywords</h3>
+                            <h3>Category</h3>
+
+                            @if (Model.UserType == 1)
+                            {
+                                //asp-action="GetAlert" asp-controller="Jobs"
+                                //form-check-input
+
+                                <form method="post">
+                                    <ul class="job-cmn-cat">
+
+                                        @foreach (var item in Model.Categoriesss)
+                                        {
+
+                                            <li>
+                                                <div class="form-check">
+                                                    <input class="check-item"
+                                                           type="checkbox"
+                                                           name=""
+                                                           value=""
+                                                           id="defaultCheck1" />
+                                                    <label class="form-check-label defaultCheck1">
+                                                        @item.Name (@item.Jobs.Count())
+                                                    </label>
+                                                </div>
+                                            </li>
+                                        }
+
+
+                                    </ul>
+
+                                </form>
+                            }
+
+                            @if (Model.UserType == 2 || Model.UserType == null)
+                            {
+
+                                <form method="post" asp-action="Index" asp-controller="Jobs">
+                                    <ul class="job-cmn-cat">
+
+                                        @foreach (var item in Model.Categoriesss)
+                                        {
+
+                                            <li>
+                                                <div class="form-check">
+                                                    <input class="form-check-input"
+                                                           type="checkbox"
+                                                           value=""
+                                                           id="defaultCheck1" />
+                                                    <label class="form-check-label" for="defaultCheck1">
+                                                        @item.Name (@item.Jobs.Count())
+                                                    </label>
+                                                </div>
+                                            </li>
+                                        }
+
+
+                                    </ul>
+                                    <button type="submit" class="btn for-js">Get Alert with Category</button>
+
+                                </form>
+                            }
+
+                        </div>
+
+
+                        <div class="location-list cmn-padding">
+                            <h3>Location List</h3>
+                            <form>
+                                <ul class="job-cmn-cat">
+
+                                    @foreach (var item in Model.Locations)
+                                    {
+
+                                        <li>
+                                            <div class="form-check">
+                                                <input class="form-check-input"
+                                                       type="checkbox"
+                                                       value=""
+                                                       id="defaultCheck-@item.Id" />
+                                                <label class="form-check-label" for="defaultCheck-@item.Id">
+                                                    @item.Address (@item.Companies.Count())
+                                                </label>
+                                            </div>
+                                        </li>
+                                    }
+
+                                </ul>
+                            </form>
+                        </div>
+                        <div class="job-type cmn-padding">
+                            <h3>Job Type</h3>
+                            <form>
+                                <ul class="job-cmn-cat">
+                                    <li>
+                                        <div class="form-check">
+                                            <input class="form-check-input"
+                                                   type="checkbox"
+                                                   value=""
+                                                   id="defaultCheck16" />
+                                            <label class="form-check-label" for="defaultCheck16">
+                                                Temporary (2)
+                                            </label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="form-check">
+                                            <input class="form-check-input"
+                                                   type="checkbox"
+                                                   value=""
+                                                   id="defaultCheck17" />
+                                            <label class="form-check-label" for="defaultCheck17">
+                                                Remote (2)
+                                            </label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="form-check">
+                                            <input class="form-check-input"
+                                                   type="checkbox"
+                                                   value=""
+                                                   id="defaultCheck18" />
+                                            <label class="form-check-label" for="defaultCheck18">
+                                                Part Time (2)
+                                            </label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="form-check">
+                                            <input class="form-check-input"
+                                                   type="checkbox"
+                                                   value=""
+                                                   id="defaultCheck19" />
+                                            <label class="form-check-label" for="defaultCheck19">
+                                                Internship (1)
+                                            </label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="form-check">
+                                            <input class="form-check-input"
+                                                   type="checkbox"
+                                                   value=""
+                                                   id="defaultCheck20" />
+                                            <label class="form-check-label" for="defaultCheck20">
+                                                Full Time (13)
+                                            </label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="form-check">
+                                            <input class="form-check-input"
+                                                   type="checkbox"
+                                                   value=""
+                                                   id="defaultCheck21" />
+                                            <label class="form-check-label" for="defaultCheck21">
+                                                Freelancer (3)
+                                            </label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="form-check">
+                                            <input class="form-check-input"
+                                                   type="checkbox"
+                                                   value=""
+                                                   id="defaultCheck22" />
+                                            <label class="form-check-label" for="defaultCheck22">
+                                                Contract (0)
+                                            </label>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </form>
+                        </div>
+                        <div class="salary cmn-padding">
+                            <h3>Salary</h3>
+                            <form>
+                                <div class="job-cmn-cat flex-divide">
+                                    <ul class="left">
+                                        <li>
+                                            <div class="form-check">
+                                                <input class="form-check-input"
+                                                       type="checkbox"
+                                                       value=""
+                                                       id="defaultCheck23" />
+                                                <label class="form-check-label"
+                                                       for="defaultCheck23">
+                                                    Monthly
+                                                </label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="form-check">
+                                                <input class="form-check-input"
+                                                       type="checkbox"
+                                                       value=""
+                                                       id="defaultCheck24" />
+                                                <label class="form-check-label"
+                                                       for="defaultCheck24">
+                                                    Daily
+                                                </label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="form-check">
+                                                <input class="form-check-input"
+                                                       type="checkbox"
+                                                       value=""
+                                                       id="defaultCheck25" />
+                                                <label class="form-check-label"
+                                                       for="defaultCheck25">
+                                                    Yearly
+                                                </label>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <ul class="right">
+                                        <li>
+                                            <div class="form-check">
+                                                <input class="form-check-input"
+                                                       type="checkbox"
+                                                       value=""
+                                                       id="defaultCheck26" />
+                                                <label class="form-check-label"
+                                                       for="defaultCheck26">
+                                                    Weekly
+                                                </label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="form-check">
+                                                <input class="form-check-input"
+                                                       type="checkbox"
+                                                       value=""
+                                                       id="defaultCheck27" />
+                                                <label class="form-check-label"
+                                                       for="defaultCheck27">
+                                                    Hourly
+                                                </label>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="form-group">
+                                    <label class="range" for="formControlRangeTwo">$6778 - $9077</label>
+                                    <input type="range"
+                                           class="form-control-range"
+                                           id="formControlRangeTwo" />
+                                </div>
+                            </form>
+                        </div>
+                        <div class="date cmn-padding">
+                            <h3>Date Posted</h3>
+                            <form>
+                                <div class="job-cmn-cat flex-divide">
+                                    <ul class="left">
+                                        <li>
+                                            <div class="form-check">
+                                                <input class="form-check-input"
+                                                       type="checkbox"
+                                                       value=""
+                                                       id="defaultCheck28" />
+                                                <label class="form-check-label"
+                                                       for="defaultCheck28">
+                                                    Last 30 Days
+                                                </label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="form-check">
+                                                <input class="form-check-input"
+                                                       type="checkbox"
+                                                       value=""
+                                                       id="defaultCheck29" />
+                                                <label class="form-check-label"
+                                                       for="defaultCheck29">
+                                                    Last 14 Days
+                                                </label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="form-check">
+                                                <input class="form-check-input"
+                                                       type="checkbox"
+                                                       value=""
+                                                       id="defaultCheck30" />
+                                                <label class="form-check-label"
+                                                       for="defaultCheck30">
+                                                    Last 7 Days
+                                                </label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="form-check">
+                                                <input class="form-check-input"
+                                                       type="checkbox"
+                                                       value=""
+                                                       id="defaultCheck31" />
+                                                <label class="form-check-label"
+                                                       for="defaultCheck31">
+                                                    All
+                                                </label>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <ul class="right">
+                                        <li>
+                                            <div class="form-check">
+                                                <input class="form-check-input"
+                                                       type="checkbox"
+                                                       value=""
+                                                       id="defaultCheck32" />
+                                                <label class="form-check-label"
+                                                       for="defaultCheck32">
+                                                    Last 24 Hours
+                                                </label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="form-check">
+                                                <input class="form-check-input"
+                                                       type="checkbox"
+                                                       value=""
+                                                       id="defaultCheck33" />
+                                                <label class="form-check-label"
+                                                       for="defaultCheck33">
+                                                    Last 14 Days
+                                                </label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="form-check">
+                                                <input class="form-check-input"
+                                                       type="checkbox"
+                                                       value=""
+                                                       id="defaultCheck34" />
+                                                <label class="form-check-label"
+                                                       for="defaultCheck34">
+                                                    Last Hour
+                                                </label>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+@section scripts{
+    <script src="~/js/job.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js "></script>
+
+
+    <script>
+
+        $('.mySelect').on("change", function () {
+
+            console.log($("option:selected").text());
+
+            //var smth = $.routeManager.action()
+
+            var data = {
+                name: $("option:selected").text()
+            }
+
+            var ajaxOptions = {
+                url: '@Url.Action("FilterCategory", "Jobs")',
+                type: 'Get',
+                dataType: "json",
+                data: data,
+                success: function (response) {
+
+                    if (response.status == 200) {
+
+                        var element = $(".vacancy-item");
+
+                        element.remove();
+
+                        response.data.forEach(elem => {
+
+                            var time = new Date(elem.createDate);
+                            var now = new Date();
+                            let difference = now.getTime() - time.getTime();
+                            var valu = Math.floor(difference / 86400000);
+                            console.log(0);
+                            
+
+                            var html = `
+                              <div class="vacancy-item">
+
+                                 <a asp-action="JobDetails" asp-controller="Jobs" asp-route-id="${elem.id}" asp-route-check="true">
+                                    <img src="/img/companyimg/${elem.image}" alt="Employer" style="width:70px;height:70px; border-radius:5px" />
+                                         <h3>${elem.positionName}</h3>
+                                   <ul>
+                                    <li>
+                                        <i class="bi bi-geo-alt"></i>
+                                        ${elem.location}
+                                    </li>
+                                    <li>
+                                      Created Date  ${valu} day ago
+
+                                       </li>
+                                    </ul>
+                                   <p>
+                                    We are Looking for a skilled ${elem.positionName} amet conscu adiing
+                                    elitsed do eusmod tempor
+                                   </p>
+                                      <span class="span-one">${elem.category.name}</span>
+                                     <span class="span-two">${elem.jobType.type}</span>
+                                 </a>
+
+                            </div>`
+                            $(".wrapper_vacancies").append(html);
+                        })
+
+                    }
+                    else {
+                        console.log("error");
+                    }
+                    console.warn(response);
+                },
+                error: function (response) {
+                    console.error(response);
+                },
+            }
+
+            $.ajax(ajaxOptions);
+        });
+
+    </script>
+
+}
+

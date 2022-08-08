@@ -1,0 +1,404 @@
+﻿@{
+    Layout = null;
+            }
+
+@model PostJobViewModel
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Post a job</title>
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+          crossorigin="anonymous" />
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css" />
+    <link rel="stylesheet" href="~/css/navbar.css" />
+    <link rel="stylesheet" href="~/css/footer.css" />
+    <link rel="stylesheet" href="~/css/contact.css" />
+    <link rel="stylesheet" href="~/css/post-job.css" />
+</head>
+<body>
+    <div class="loader" style="display: none">
+        <div class="d-table">
+            <div class="d-table-cell">
+                <div class="spinner"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-nav fixed-top">
+        <div class="container-fluid">
+            <nav class="navbar navbar-expand-md navbar-light">
+                <a href="" class="navbar-brand">
+                    <img src="~/img/JA-logo1.jpg" alt="Logo" class="logo" />
+                </a>
+                <div class="collapse navbar-collapse mean-menu mx-5 d-flex justify-content-between">
+                    <ul class="navbar-nav">
+                        <li class="nav-item mx-3"><a asp-action="Index" asp-controller="Home">Home</a></li>
+                        <li class="nav-item mx-3">About</li>
+                        <li class="nav-item mx-3"><a asp-action="Index" asp-controller="Jobs">Jobs</a></li>
+                        <li class="nav-item mx-3"><a asp-action="Index" asp-controller="Candidates">Candidates</a></li>
+                        <li class="nav-item mx-3">Blogs</li>
+                        <li class="nav-item mx-3"><a asp-action="Index" asp-controller="Contact">Contact</a></li>
+                    </ul>
+                    <div class="side-nav">
+                        <ul class="for-user">
+                            <li class="nav-item mx-3">
+
+                                <a class="nav-link" asp-controller="Candidates" asp-action="CandidateResume">
+                                    <i class="bi bi-person"></i>
+                                    @User.Identity.Name
+                                </a>
+                            </li>
+                            <li class="nav-item mx-3">
+                                <a class="nav-link" asp-controller="account" asp-action="logout">
+                                    <i class="bi bi-box-arrow-left"></i>
+                                    logout
+                                </a>
+                            </li>
+                        </ul>
+                        <a href="" class="job-button"></a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+    <div class="page-title-area">
+        <div class="d-table">
+            <div class="d-table-cell">
+                <div class="container">
+                    <div class="title-item">
+                        <h2>Post A Job</h2>
+                        <ul>
+                            <li>
+                                <img src="~/img/title-img-two.png" alt="Image" />
+                                <a asp-action="Index" asp-controller="Home">Home</a>
+                            </li>
+                            <li>
+                                <span>/</span>
+                            </li>
+                            <li>Post A Job</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="job-form">
+        <div class="container">
+            <form asp-action="PostJob" >
+                <div class="post-item">
+                    <div class="section-title">
+                        <h2>Post A Job</h2>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet
+                            placeat totam laboriosam ut labore aliquid veniam repellendus
+                            similique? Id molestiae pariatur molestias, alias quia sint
+                            autem nemo architecto facere asperiores.
+                        </p>
+                    </div>
+                    <div class="row">
+
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <label asp-for="@Model.CompanyName"></label>
+                                <input type="text"
+                                       asp-for="@Model.CompanyName"
+                                       class="form-control"
+                                       placeholder="CompanyName" />
+                                <span class="text-danger small" asp-validation-for="@Model.CompanyName"></span>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <label asp-for="@Model.Email"></label>
+                                <input type="email"
+                                       asp-for="@Model.Email"
+                                       class="form-control"
+                                       placeholder="example@gmail.com" />
+                                <span class="text-danger small" asp-validation-for="@Model.Email"></span>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <label asp-for="@Model.PhoneNumber"></label>
+                                <input type="text"
+                                       asp-for="@Model.PhoneNumber"
+                                       class="form-control"
+                                       placeholder="+123-456-789" />
+                                <span class="text-danger small" asp-validation-for="@Model.PhoneNumber"></span>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <label asp-for="@Model.Salary"></label>
+                                <input type="text"
+                                       asp-for="@Model.Salary"
+                                       class="form-control"
+                                       placeholder="+123-456-789" />
+                                <span class="text-danger small" asp-validation-for="@Model.Salary"></span>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <label asp-for="@Model.PositionName"></label>
+                                <input type="text"
+                                       asp-for="@Model.PositionName"
+                                       class="form-control"
+                                       placeholder="Web Developer" />
+                                <span class="text-danger small" asp-validation-for="@Model.PositionName"></span>
+                            </div>
+                        </div>
+
+
+
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <label asp-for="@Model.JobType"></label>
+                                <select class="form-control form-control-sm" asp-for="@Model.JobType" asp-items="@Model.JobTypes">
+                                    <option selected disabled>choose here</option>
+                                </select>
+                                <span class="text-danger small" asp-validation-for="@Model.JobType"></span>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <label asp-for="@Model.Category"></label>
+                                <select class="form-control form-control-sm" asp-for="@Model.Category" asp-items="@Model.Categories">
+                                    <option>choose here</option>
+                                </select>
+                                <span class="text-danger small" asp-validation-for="@Model.Category"></span>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <label asp-for="@Model.CreatedDate"></label>
+                                <input type="date"
+                                       value="@DateTime.Now.ToShortDateString()"
+                                       asp-for="@Model.CreatedDate"
+                                       class="form-control"
+                                       placeholder="created date" />
+                                <span class="text-danger small" asp-validation-for="@Model.CreatedDate"></span>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <label asp-for="@Model.Experience"> </label>
+                                <select class="form-control form-control-sm" asp-for="@Model.Experience">
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                    <option>6</option>
+                                </select>
+                                <span class="text-danger small" asp-validation-for="@Model.Experience"></span>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <label asp-for="@Model.Position">  </label>
+                                <select class="form-control form-control-sm" asp-for="@Model.Position" asp-items="@Model.Positions">
+                                    <option selected disabled>Select here</option>
+                                </select>
+                                <span class="text-danger small" asp-validation-for="@Model.Position"></span>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <label asp-for="@Model.Location"></label>
+                                <input type="datetime"
+                                       asp-for="@Model.Location"
+                                       class="form-control"
+                                       placeholder="Location" />
+                                <span class="text-danger small" asp-validation-for="@Model.Location"></span>
+                            </div>
+                        </div>
+                      
+                        <input type="hidden" value="3"
+                               asp-for="@Model.JobSituation" />
+                    </div>
+                    <button type="submit" class="btn">Post A Job</button>
+                    <button asp-action="Index" asp-controller="Company" class="btn">Back to Profile</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <footer class="footer three pt-100 pb-70">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-6 col-lg-4">
+                    <div class="footer-item three">
+                        <div class="footer-left">
+                            <a class="logo" href="index.html">
+                                <img src="/img/ja-king-logo.png" alt="Logo" />
+                                Company
+                            </a>
+                            <ul>
+                                <li>
+                                    <span>Address: </span>
+                                    2659 Autostrad St, London, UK
+                                </li>
+                                <li>
+                                    <span>Message: </span>
+                                    <a href="mailto:hello@jecto.com">hello@jecto.com</a>
+                                </li>
+                                <li>
+                                    <span>Phone: </span>
+                                    <a href="tel:2151234567">215 - 123 - 4567</a>
+                                </li>
+                                <li>
+                                    <span>Open: </span>
+                                    Mon - Fri / 9:00 AM - 6:00 PM
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-3">
+                    <div class="footer-item three">
+                        <div class="footer-service">
+                            <h3>Our Services</h3>
+                            <ul>
+                                <li>
+                                    <a href="#" target="_blank">Accounting</a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">Teachers</a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">Customer Service</a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">Digital Marketing</a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">Web &amp; Software Dev</a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">Science &amp; Analytics</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-2">
+                    <div class="footer-item three">
+                        <div class="footer-service">
+                            <h3>Useful Links</h3>
+                            <ul>
+                                <li>
+                                    <a href="privacy-policy.html" target="_blank">Privacy Policy</a>
+                                </li>
+                                <li>
+                                    <a href="terms-conditions.html" target="_blank">Terms &amp; Conditions</a>
+                                </li>
+                                <li>
+                                    <a href="jobs.html" target="_blank">Jobs</a>
+                                </li>
+                                <li>
+                                    <a href="candidates.html" target="_blank">Candidates</a>
+                                </li>
+                                <li>
+                                    <a href="blog.html" target="_blank">Blog</a>
+                                </li>
+                                <li>
+                                    <a href="contact.html" target="_blank">Contact</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-3">
+                    <div class="footer-item three">
+                        <div class="footer-newsletter">
+                            <h3>Newsletter</h3>
+                            <p>Lorem ipsum dolor sit amet conscu adipiscing elit sed</p>
+                            <form class="newsletter-form"
+                                  data-toggle="validator"
+                                  novalidate="true">
+                                <input type="email"
+                                       class="form-control"
+                                       placeholder="Your email*"
+                                       name="EMAIL"
+                                       required=""
+                                       autocomplete="off" />
+                                <button class="btn disabled"
+                                        type="submit"
+                                        style="pointer-events: all; cursor: pointer">
+                                    <i class="bi bi-send"></i>
+                                </button>
+                                <div id="validator-newsletter" class="form-result"></div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div id="copyright">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="copyright-item">
+                        <ul>
+                            <li>
+                                <a href="#" target="_blank">
+                                    <i class="bi bi-facebook"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" target="_blank">
+                                    <i class="bi bi-twitter"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" target="_blank">
+                                    <i class="bi bi-linkedin"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" target="_blank">
+                                    <i class="bi bi-pinterest"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" target="_blank">
+                                    <i class="bi bi-youtube"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="copyright-item">
+                        <p class="last-p">
+                            @*Copyright @*@
+                            <script>
+                  document.write(new Date().getFullYear());
+                            </script>
+                            2022 Jecto. Designed By
+                            <a href="https://hibootstrap.com/" target="_blank">HiBootstrap</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/js/jquery.js"></script>
+    <script src="/js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+﻿@model ResumeViewModel
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cv</title>
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+          crossorigin="anonymous" />
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css" />
+    <link rel="stylesheet" href="~/css/upload.css" />
+</head>
+<body>
+    <div class="loader">
+        <div class="d-table">
+            <div class="d-table-cell">
+                <div class="spinner"></div>
+            </div>
+        </div>
+    </div>
+
+    <section class="option">
+        <div class="d-table">
+            <div class="d-table-cell">
+                <div class="container align-items-center">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            @if (Model.Resumes.Count() > 0)
+                            {
+
+                                @foreach (var item in Model.Resumes)
+                                {
+
+                                    @if (item.Resume_Uploading != null)
+                                    {
+                                        //@* height:800px"*@
+                                        <embed src="~/resumes/@item.Resume_Uploading" class="cv_area"/>
+                                    }
+                                    else
+                                    {
+                                        <h3>
+                                            Some problems occured during proccess
+                                        </h3>
+                                    }
+
+                                }
+                            }
+                            else
+                            {
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-lg-12">
+
+                                            <h3>
+                                                U don't have cv yet! Go upload quickly ))
+                                            </h3>
+                                            <a style="text-decoration:none; color:white" asp-action="Index" asp-controller="Resume"></a>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="/js/jquery.js"></script>
+    <script src="/js/script.js"></script>
+</body>
+</html>

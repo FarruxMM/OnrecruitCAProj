@@ -1,0 +1,64 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Tiro Kannada', Verdana, Tahoma, sans-serif;
+}
+
+body {
+    background: #1d1d1d;
+    color: #ffffff;
+}
+
+.form-group .form-control {
+    background-color: #1d1d1d;
+    color: #ffffff;
+}
+
+.option {
+    display: flex;
+    height: 100vh;
+    text-align: center;
+    align-items: center;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+}
+
+    .option .option-content h1 {
+        font-size: 130px;
+        color: #fe4a55;
+        margin-bottom: 10px;
+        line-height: 1.4;
+        font-weight: 700;
+    }
+
+    .option .option-content h2 {
+        color: #fff;
+        font-size: 25px;
+        margin-bottom: 10px;
+    }
+
+    .option .option-content p {
+        font-weight: 500;
+        margin-bottom: 20px;
+        color: #ffffff !important;
+    }
+
+    .option .option-content button {
+        display: inline-block;
+        color: #fff;
+        background-color: #fe4a55;
+        padding: 12px 35px;
+        border-radius: 5px;
+        font-weight: 500;
+        transition: 0.5s all ease;
+        text-decoration: none;
+    }
+
+    .option .cv_area {
+        width: 1000px;
+        height: 100vh;
+        margin:7px;
+    }

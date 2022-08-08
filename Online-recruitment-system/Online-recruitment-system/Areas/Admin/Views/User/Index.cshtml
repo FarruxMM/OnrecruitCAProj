@@ -1,0 +1,115 @@
+﻿@model List<UserDTO>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+
+            <th>
+                Id
+            </th>
+
+            <th>
+                UserName
+            </th>
+
+            <th>
+                Email
+            </th>
+
+            <th>
+                FullName
+            </th>
+
+            <th>
+                IsActive
+            </th>
+
+
+
+
+            <th>Settings</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+
+                <td>
+                    @item.Id
+                </td>
+
+                <td>
+                    @item.UserName
+                </td>
+
+                <td>
+                    @item.Email
+                </td>
+
+                <td>
+                    @item.FullName
+                </td>
+
+                <td>
+                    @item.IsActive
+                </td>
+
+                <td>
+                    @if (item.IsActive)
+                    {
+                        <a asp-action="ChangeStatus" asp-route-id="@item.Id" class="btn btn-danger btn-circle">
+                            <i class="fas fa-fw fa-wrench"></i>
+                        </a>
+                    }
+                    else
+                    {
+                        <a asp-action="ChangeStatus" asp-route-id="@item.Id" class="btn btn-warning btn-circle">
+                            <i class="fas fa-fw fa-wrench"></i>
+                        </a>
+                    }
+
+                </td>
+            </tr>
+        }
+
+        <nav aria-label="Page navigation example" class="pt-4 pb-4">
+            <ul class="pagination">
+                <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+
+
+
+                @for (int i = 1; i <= Model[0].PaginationModel.TotalPage; i++)
+                {
+                    if (i == Model[0].PaginationModel.CurrentPage)
+                    {
+                        <li class="page-item disabled">
+                            <a asp-action="Index" asp-route-page="@i" class="page-link">@i</a>
+                        </li>
+                    }
+                    else
+                    {
+                        <li class="page-item ">
+                            <a asp-action="Index" asp-route-page="@i" class="page-link">@i</a>
+                        </li>
+                    }
+
+                }
+
+
+                <li class="page-item"><a class="page-link" href="#">Next</a></li>
+            </ul>
+        </nav>
+
+    </tbody>
+</table>
+

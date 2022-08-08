@@ -1,0 +1,272 @@
+﻿@model CompanyViewModel
+
+<div class="title-details two">
+    <div class="d-table">
+        <div class="d-table-cell">
+            <div class="container-fluid">
+                <div class="row align-items-end just">
+                    <div class="col-lg-8">
+                        <div class="left text-left">
+                            <h2>@Model.Company.Name</h2>
+                            <img src="~/img/companyimg/@Model.Company.Image" alt="Details" />
+                            <ul>
+
+                                <li>
+                                    <i class="bi bi-geo-alt"></i>
+                                    <a href="">@Model.Company.Location.Address</a>
+                                </li>
+                                <li>
+                                    <i class="bi bi-telephone-outbound"></i>
+                                    <a href="">@Model.Company.PhoneNumber</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="right">
+                            <ul>
+                                <li>
+                                    <a href="#">
+                                        <i class="bi bi-heart"></i>
+                                        Save
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="bi bi-share"></i>
+                                        Share
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="bi bi-file-earmark-bar-graph"></i>
+                                        Report
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="candidate-details">
+    <div class="container-fluid">
+        <div class="row">
+
+            <div class="col-lg-8">
+                <div class="details-item">
+                    <div class="profile">
+
+
+                        <h3>About Company</h3>
+                        <p>
+                            <b> @Model.Company.About </b>
+
+                            
+                        </p>
+
+                    </div>
+                    <div class="experience bottom-item">
+                        <h3>Job Responsibilities</h3>
+                        <ul>
+                            <li>
+                                <i class="bi bi-check"></i>
+                                <span> Ability to work under pressure</span>
+                            </li>
+
+                            <li>
+                                <i class="bi bi-check"></i>
+                                <span> Enterprise and entrepreneurial skills</span>
+                            </li>
+
+                            <li>
+                                <i class="bi bi-check"></i>
+                                <span> Negotiation and persuasion</span>
+                            </li>
+
+                            <li>
+                                <i class="bi bi-check"></i>
+                                <span>
+                                    Understand where the other person is coming from so that
+                                    you can both get what
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="portfolio">
+
+                        @if (Model.Company.CompanyImages.Count != 0)
+                        {
+                            <h3>Image Gallery</h3>
+
+                            <div class="job-details-slider owl-theme owl-carousel owl-loaded owl-drag imgs">
+                                <div class="owl-stage-outer">
+                                    <div class="owl-stage"
+                                         style="
+                                          transform: translate3d(-2628px, 0px, 0px);
+                                           transition: all 1s ease 0s;
+                                               width: 6132px;
+                                                          ">
+
+                                        @foreach (var item in Model.Company.CompanyImages)
+                                        {
+                                            <div class="owl-item"
+                                                 style="width: 856px; margin-right: 20px">
+                                                <div class="slider-item">
+                                                    <img src="~/img/companyimages/@item.Image" alt="Details" style="height:200px;width:100%" />
+                                                </div>
+                                            </div>
+                                        }
+
+
+                                    </div>
+                                </div>
+                                <div class="owl-nav">
+                                    <button type="button" role="presentation" class="owl-prev">
+                                        <i class="flaticon-left-arrow"></i>
+                                    </button><button type="button" role="presentation" class="owl-next">
+                                        <i class="flaticon-right-arrow"></i>
+                                    </button>
+                                </div>
+                                <div class="owl-dots disabled"></div>
+                            </div>
+
+                        }
+
+
+
+                    </div>
+                    <!-- <div class="review">
+                         <h3>Add Review</h3>
+                         <span>Your rating for this listing</span>
+                         <ul>
+                           <li>
+                             <i class="bx bxs-star checked"></i>
+                           </li>
+                           <li>
+                             <i class="bx bxs-star checked"></i>
+                           </li>
+                           <li>
+                             <i class="bx bxs-star checked"></i>
+                           </li>
+                           <li>
+                             <i class="bx bxs-star checked"></i>
+                           </li>
+                           <li>
+                             <i class="bx bxs-star checked"></i>
+                           </li>
+                         </ul>
+                         <form>
+                           <div class="form-group form-check">
+                             <input
+                               type="checkbox"
+                               class="form-check-input"
+                               id="exampleCheck59"
+                             />
+                             <label class="form-check-label" for="exampleCheck59"
+                               >Save my name, email, and website in this browser for the
+                               next time I comment.</label
+                             >
+                           </div>
+                           <div class="row">
+                             <div class="col-lg-6">
+                               <div class="form-group">
+                                 <i class="bx bx-user"></i>
+                                 <input
+                                   type="text"
+                                   class="form-control"
+                                   placeholder="Name*"
+                                 />
+                               </div>
+                             </div>
+                             <div class="col-lg-6">
+                               <div class="form-group">
+                                 <i class="bx bx-mail-send"></i>
+                                 <input
+                                   type="email"
+                                   class="form-control"
+                                   placeholder="Email*"
+                                 />
+                               </div>
+                             </div>
+                             <div class="col-lg-12">
+                               <div class="form-group">
+                                 <i class="bx bx-mail-send"></i>
+                                 <textarea
+                                   id="your-message"
+                                   rows="10"
+                                   class="form-control"
+                                   placeholder="Write message"
+                                 ></textarea>
+                               </div>
+                             </div>
+                             <div class="col-lg-12">
+                               <button type="submit" class="btn">Submit A Review</button>
+                             </div>
+                           </div>
+                         </form>
+                       </div> -->
+                </div>
+
+                <div class="download widget-item pt-3">
+                    <a asp-action="Posted" asp-controller="Company">Posted Jobs</a>
+                    <a asp-action="PostJob" asp-controller="Company">Post Job</a>
+                    <a asp-action="EditProfile" asp-controller="Company" asp-route-id="@Model.Company.Id">Edit Profile</a>
+                </div>
+
+            </div>
+            <div class="col-lg-4">
+                <div class="widget-area">
+                    <div class="information widget-item">
+                        <h3>Company Information</h3>
+                        <ul>
+                            <li>
+                                <img src="/img/job-details-icon.png" alt="Details" />
+                                <h4>Team Size</h4>
+                                <span>50 - 100 Members</span>
+                            </li>
+                            <li>
+                                <img src="/img/job-details-icon.png" alt="Details" />
+                                <h4>Location</h4>
+                                <span>@Model.Company.Location.Address</span>
+                            </li>
+
+                        </ul>
+                    </div>
+                    <div class="owner">
+                        <div class="top">
+                            <img src="/img/companyimg/@Model.Company.Image" alt="Owner" style="width:70px;height:70px;p-3" />
+                            <h3>Owner Info</h3>
+                            <i class="bi bi-send"></i>
+                            <span>@Model.Company.Email</span>
+                        </div>
+                        <div class="information widget-item">
+                            <ul>
+                                <li>
+                                    <img src="/img/job-details-icon.png" alt="Details" />
+                                    <h4>Baku Office: 28 may AF buissnes house</h4>
+                                    <a href="#">+994555552322</a>
+                                </li>
+                                <li>
+                                    <img src="/img/job-details-icon.png" alt="Details" />
+                                    <h4>Email</h4>
+                                    <a href="mailto:hello@jecto.com">hello@ja.com</a>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+
+
+

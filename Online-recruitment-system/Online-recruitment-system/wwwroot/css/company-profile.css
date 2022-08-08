@@ -1,0 +1,369 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Tiro Kannada', Verdana, Tahoma, sans-serif;
+}
+
+.main-nav {
+    background: transparent;
+    padding-top: 10px;
+    transition: 0.5s all ease;
+}
+
+
+.scrolled {
+    background: #161616;
+    box-shadow: 0px 0px 20px 0px #6363636b;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+
+.loader {
+    position: fixed;
+    z-index: 99999;
+    background: #fe4a55;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+}
+
+.title-details {
+    background-image: url(../img/page-title-bg.jpg);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    position: relative;
+    height: 400px;
+    z-index: 1;
+}
+
+.just {
+    padding-top: 130px;
+}
+
+.title-details:before {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: #000;
+    opacity: .70;
+    z-index: -1;
+}
+
+.d-table {
+    width: 100%;
+    height: 100%;
+    display: table !important;
+}
+
+.d-table-cell {
+    vertical-align: middle;
+    display: table-cell !important;
+}
+
+.title-details .left {
+    margin-bottom: -150px;
+    padding-left: 10px;
+}
+
+.title-details .left img {
+
+    border-radius:10px;
+    position: absolute;
+    bottom: 20px;
+    left: 22px;
+    height: 70px;
+    border:0;
+    box-shadow:none;
+}
+
+.title-details .left h2 {
+    margin-bottom: 15px;
+    color: #fff;
+    font-size: 35px;
+    line-height: 1.4;
+    font-weight: 700;
+}
+
+.title-details .left ul li {
+    list-style-type: none;
+    display: inline-block;
+    color: #d9d9d9;
+    margin-right: 20px;
+}
+
+.left ul li a {
+    display: inline-block;
+    color: #fe4a55 !important;
+    text-decoration: none;
+}
+
+.title-details.two .left ul li i {
+    display: inline-block;
+    font-size: 20px;
+    position: relative;
+    top: 3px;
+    margin-right: 3px;
+}
+
+.left ul li:last-child i {
+    color: #d9d9d9;
+}
+
+.left ul li:last-child {
+    margin-right: 0;
+    color: #00d2ff;
+}
+
+.right {
+    text-align: center;
+    margin-bottom: -120px;
+    padding-top: 66px;
+}
+
+.right ul li {
+    list-style-type: none;
+    display: inline-block;
+    padding-right: 10px;
+    border-right: 1px solid #fff;
+    margin-right: 10px;
+}
+
+.right ul li a {
+    display: block;
+    color: #fff;
+}
+
+#candidate-details {
+    padding-top: 100px;
+    padding-bottom: 100px;
+    background: #1d1d1d;
+}
+
+#candidate-details .details-item {
+    margin-left: 20px;
+}
+
+.profile {
+    margin-bottom: 50px;
+}
+
+.details-item .profile h3 {
+    font-size: 22px;
+    color: #ffffff !important;
+    margin-bottom: 10px;
+    line-height: 1.4;
+    font-weight: 700;
+}
+
+.details-item .profile p {
+    margin-bottom: 0;
+    color: #ffffff !important;
+    line-height: 1.8;
+}
+
+.details-item .bottom-item {
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #f5f5f5;
+}
+
+.details-item .bottom-item h3 {
+    color: #ffffff;
+    font-size: 25px;
+    margin-bottom: 20px;
+    line-height: 1.4;
+    font-weight: 700;
+}
+
+.details-item h3 {
+    color: #ffffff;
+    font-size: 25px;
+    margin-bottom: 20px;
+    line-height: 1.4;
+    font-weight: 700;
+}
+
+.details-item .portfolio .img {
+    margin-bottom: 30px;
+}
+
+.details-item .portfolio .img img {
+    border-radius: 5px;
+    max-width: 100%;
+}
+
+.experience ul {
+    margin: 0;
+    padding: 0;
+    padding-top: 5px;
+    margin-bottom: 10px;
+}
+
+.experience ul li {
+    list-style-type: none;
+    display: inline-block;
+    color: #fe4a55;
+    font-weight: 500;
+}
+
+.experience ul li img {
+    display: inline-block;
+    margin-right: 5px;
+    position: relative;
+    top: -2px;
+}
+
+.experience ul li span {
+    color: #ffffff;
+    font-weight: 400;
+    margin-left: 15px;
+}
+
+.details-item .experience h4 {
+    color: #ffffff;
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.details-item .experience p {
+    margin-bottom: 0;
+    color: #ffffff !important;
+    line-height: 1.8;
+}
+
+.widget-area .widget-item {
+    border-radius: 5px;
+    border: 1px dashed #fe4a55;
+    padding: 25px 30px 30px;
+    margin-bottom: 30px;
+}
+
+.widget-item h3 {
+    color: #ffffff;
+    font-size: 20px;
+    margin-bottom: 30px;
+    position: relative;
+    border-bottom: 1px solid #e1e1e1;
+    padding-bottom: 15px;
+}
+
+.widget-area .widget-item h3:before {
+    position: absolute;
+    content: '';
+    width: 50px;
+    height: 3px;
+    bottom: -2px;
+    left: 0;
+    background-color: #fe4a55;
+    border-radius: 0 50% 50% 0;
+}
+
+.information ul li {
+    list-style-type: none;
+    display: block;
+    position: relative;
+    padding-left: 50px;
+    border-bottom: 1px solid #e1e1e1;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+
+.information ul li img {
+    position: absolute;
+    top: 3px;
+    left: 0;
+}
+
+.information ul li h4 {
+    font-size: 16px;
+    color: #ffffff;
+    margin-bottom: 5px;
+}
+
+.information ul li span {
+    display: block;
+    color: #7d789b;
+    font-size: 14px;
+}
+
+.owner {
+    margin-bottom: 30px;
+}
+
+.owner .top {
+    position: relative;
+    padding: 30px 25px 30px;
+    background-color: #252525;
+    padding-left: 105px;
+    border: 1px dashed #fe4a55;
+    border-radius: 5px 5px 0 0;
+}
+
+.owner .top img {
+    position: absolute;
+    top: 25px;
+    left: 30px;
+    border-radius:7px;
+    margin-right:7px;
+}
+
+.owner .top h3 {
+    color: #ffffff;
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+
+.widget-area .owner .top i {
+    color: #ffffff;
+    display: inline-block;
+    margin-right: 5px;
+    font-size: 18px;
+    position: relative;
+    top: 1px;
+}
+
+.owner .top span {
+    display: inline-block;
+    color: #fff;
+}
+
+.owner .widget-item a {
+    display: block;
+    color: #ffffff;
+}
+
+.job-details-slider {
+    margin-top: 20px;
+}
+
+.owl-carousel .owl-stage-outer {
+    position: relative;
+    overflow: hidden;
+}
+
+.slider-item {
+    position: relative;
+}
+
+.slider-item:before {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: #000;
+    opacity: .40;
+}
+
+.slider-item img {
+    border-radius: 5px;
+    display: block;
+    width: 100%;
+}

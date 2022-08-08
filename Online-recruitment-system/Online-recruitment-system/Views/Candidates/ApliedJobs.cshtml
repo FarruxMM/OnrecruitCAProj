@@ -1,0 +1,104 @@
+﻿@{
+    Layout = null;
+}
+
+@model List<Job>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aplied Jobs</title>
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+          crossorigin="anonymous" />
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.24/dist/sweetalert2.min.css">
+    <link rel="stylesheet" href="~/css/posted-job.css" />
+</head>
+<body>
+    <div class="loader">
+        <div class="d-table">
+            <div class="d-table-cell">
+                <div class="spinner"></div>
+            </div>
+        </div>
+    </div>
+
+    <section class="option">
+        <div class="d-table">
+            <div class="d-table-cell">
+                <div class="container-fluid align-items-center">
+
+                    <div class="option-content pb-4">
+                        <h2>Your Aplied Jobs</h2>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-8">
+
+                            @foreach (var item in Model)
+                            {
+
+                                <div class="vacancy-item">
+                                    <a asp-action="JobDetails" asp-controller="Jobs" asp-route-id="@item.Id" asp-route-check="true">
+                                        <img src="~/img/companyimg/@item.Image" alt="Employer" />
+                                        <h3>@item.PositionName</h3>
+                                        <ul>
+                                            <li>
+                                                <i class="bi bi-geo-alt"></i>
+                                                @item.Location
+                                            </li>
+                                            <li>
+                                                created: @item.CreateDate.ToShortDateString()
+                                            </li>
+                                        </ul>
+                                        <p>
+                                            We are Looking for a skilled @item.PositionName
+                                        </p>
+                                        <span class="span-one">@item.Category.Name</span>
+                                        @if (item.IsActive)
+                                        {
+                                            <span class="span-two">Available</span>
+                                        }
+                                        <span class="span-two">@item.JobType.Type</span>
+                                    </a>
+                                </div>
+
+                            }
+
+
+                        </div>
+
+                    </div>
+
+                    <a asp-action="CandidateResume" asp-controller="Candidates" class="btn">Back to Profile</a>
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <input type="hidden" id="for-aplied" value="@TempData["NoApliedJob"]" />
+
+
+    <script src="/js/jquery.js"></script>
+    <script src="/js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.24/dist/sweetalert2.all.min.js"></script>
+    <script>
+        if ($("#for-aplied").val() != "") {
+            Swal.fire({
+                title: 'Attention!',
+                text: $("#for-aplied").val(),
+                icon: 'info',
+                confirmButtonText: 'Okay'
+            })
+        }
+    </script>
+</body>
+</html>
+

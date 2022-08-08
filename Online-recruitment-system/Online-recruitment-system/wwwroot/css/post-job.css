@@ -1,0 +1,107 @@
+#job-form {
+    padding: 100px 0 100px 0;
+    background: #1d1d1d;
+}
+
+.post-item {
+    background-color: #252525;
+    text-align: center;
+    padding: 40px 50px 50px;
+    border-radius: 5px;
+}
+
+.post-item .section-title {
+    max-width: 670px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.post-job-area .post-item .section-title {
+    max-width: 670px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.post-item .section-title {
+    margin-bottom: 50px;
+    position: relative;
+    z-index: 1;
+    margin-top: 2px;
+}
+
+.post-item .section-title h2 {
+    font-size: 30px;
+    margin-bottom: 25px;
+    position: relative;
+    padding-bottom: 10px;
+    color: #ffffff !important;
+}
+
+.post-item .section-title h2:before {
+    position: absolute;
+    content: '';
+    width: 55px;
+    height: 3px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #fe4a55;
+}
+
+.post-item .section-title h2:after {
+    position: absolute;
+    content: '';
+    width: 35px;
+    height: 3px;
+    left: 0;
+    right: 0;
+    bottom: -8px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #fe4a55;
+}
+
+.post-item .section-title p {
+    margin-bottom: 0;
+    color: #ffffff !important;
+}
+
+.post-item .form-group {
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+.post-item .form-group label {
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.post-item .form-group .form-control {
+    background-color: #1d1d1d;
+    color: #ffffff;
+    padding-left: 20px;
+    height: 50px;
+    border: 1px solid #fff;
+    transition: 0.5s all ease;
+    font-size: 14px;
+}
+
+.post-item .btn {
+    color: #fff;
+    background-color: #fe4a55 !important;
+    border-radius: 5px;
+    text-align: center;
+    display: inline-block;
+    padding: 12px 100px;
+    font-weight: 500;
+    transition: 0.5s all ease;
+   /* position: absolute;*/
+}
+
+.form-group label {
+    margin-bottom: 10px;
+    font-weight: 500;
+    color: #ffffff;
+}

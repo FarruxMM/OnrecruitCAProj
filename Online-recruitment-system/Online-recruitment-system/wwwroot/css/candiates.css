@@ -1,0 +1,231 @@
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Tiro Kannada', Verdana, Tahoma, sans-serif;
+}
+
+.main-nav {
+    background: transparent;
+    padding-top: 20px;
+    transition: 0.5s all ease;
+}
+
+
+.scrolled {
+    background: #161616 !important;
+    box-shadow: 0px 0px 20px 0px #6363636b;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+
+.logo {
+    width: 100%;
+    height: 70px;
+}
+
+.nav-item {
+    color: white;
+
+}
+
+.left-login {
+    color: white;
+}
+
+#filter {
+    background-color: #1d1d1d;
+    padding-top: 60px;
+    padding-bottom: 60px;
+
+}
+
+#filter .form-group {
+    margin-bottom: 30px;
+}
+
+#filter .form-group .form-control {
+    background-color: #1d1d1d;
+    color: #ffffff;
+    height: 50px;
+    border: 1px dashed #fe4a55;
+    padding-left: 15px;
+    -webkit-transition: 0.5s all ease;
+    transition: 0.5s all ease;
+    font-size: 14px;
+}
+
+.form-group .nice-select {
+    background-color: #1d1d1d;
+    color: #ffffff;
+    height: 50px;
+    border: 1px dashed #fe4a55;
+    padding-left: 15px;
+    -webkit-transition: 0.5s all ease;
+    transition: 0.5s all ease;
+    font-size: 14px;
+    display: block;
+    width: 100%;
+    line-height: 50px;
+    margin-bottom: 30px;
+}
+
+.nice-select:after {
+    border-bottom: 2px solid #999;
+    border-right: 2px solid #999;
+    content: '';
+    display: block;
+    height: 5px;
+    margin-top: -4px;
+    pointer-events: none;
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    -webkit-transform-origin: 66% 66%;
+    -ms-transform-origin: 66% 66%;
+    transform-origin: 66% 66%;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+    -webkit-transition: all .15s ease-in-out;
+    transition: all .15s ease-in-out;
+    width: 5px;
+}
+
+.nice-select.open:after {
+    transform: rotate(-135deg);
+}
+
+
+.job-showing-area {
+    background-color: #000;
+    padding-bottom: 50px;
+}
+
+.job-showing-area h4 {
+    font-size: 20px;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.job-showing-area .showing {
+    background-color: #252525;
+    padding: 15px 15px;
+    border-radius: 5px;
+    padding-bottom: 50px;
+}
+
+#candidates-list {
+    background-color: #1d1d1d;
+    padding-bottom: 100px;
+    overflow: hidden;
+    padding-top: 60px;
+
+}
+
+#candidates-list .candidate-card {
+    border: 2px dashed #fe4a55;
+    overflow: hidden;
+    padding: 25px 25px 25px;
+    border-radius: 5px;
+    position: relative;
+}
+
+#candidates-list .candidate-card .left {
+    max-width: 310px;
+}
+
+#candidates-list .candidate-card .left h3 {
+    font-size: 20px;
+    margin-bottom: 5px;
+    color: #ffffff !important;
+}
+
+#candidates-list .candidate-card .left span {
+    display: block;
+    color: #7d789b;
+    margin-bottom: 8px;
+}
+
+.experience {
+    margin: 0;
+    padding: 0;
+    margin-top: 14px;
+    margin-bottom: 18px;
+}
+
+.experience li {
+    list-style-type: none;
+    display: block;
+    color: #595959;
+    font-size: 14px;
+    margin-bottom: 5px;
+    background-color: transparent;
+    border-radius: 0;
+    padding: 0;
+    margin-right: 0;
+}
+
+.skills ul li {
+    list-style-type: none;
+    display: inline-block;
+    font-size: 12px;
+    color: #7f7f7f;
+    background-color: #ececec;
+    border-radius: 5px;
+    padding: 4px 8px;
+    margin-right: 3px;
+    margin-bottom: 6px;
+}
+
+.left .link {
+    margin-top: 10px;
+    text-align: left;
+    margin-left: 45px;
+    margin-top: 22px;
+}
+
+.left .link a {
+    color: #7068a3;
+    font-size: 15px;
+    display: inline-block;
+    position: relative;
+}
+
+.pagination-area {
+    text-align: center;
+}
+
+.pagination-area ul li {
+    list-style-type: none;
+    display: inline-block;
+    margin-right: 3px;
+    margin-left: 3px;
+}
+
+.pagination-area ul li a {
+    text-align: center;
+    padding: 5px 15px;
+    border-radius: 5px;
+    border: 1px dashed #fe4a55;
+    display: inline-block;
+    color: #fe4a55;
+}
+
+.my-select {
+    width: 100%;
+    padding: 12px 10px;
+    background: transparent;
+    color: #fff;
+    border: 1px dashed #fe4a55;
+}
+
+.my-select:focus {
+    border: 1px dashed #fe4a55 !important;
+}
+
+.my-select option {
+    background-color: #333!important;
+    color:#fff;
+    padding:10px!important;
+}

@@ -1,0 +1,146 @@
+.candidate-card img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    border-radius: 5px;
+    max-width: 250px;
+}
+
+.candidate-card .left .route a:hover {
+    margin-left: -45px;
+    color: #21a212;
+}
+
+.candidate-item .left .route a:hover .one {
+    left: -60px;
+}
+
+.route a:hover .one {
+    opacity: 0;
+}
+
+.candidate-card .left .route a:hover .two {
+    color: #21a212;
+    left: 110px;
+}
+
+.candidate-card .left .route a i {
+    top: -4px;
+}
+
+.route a .two {
+    position: absolute;
+    left: unset;
+    opacity: 0;
+}
+
+.route a:hover .two {
+    opacity: 1;
+    right: -55px;
+}
+
+.candidate-card .left .route a i {
+    color: #7068a3;
+    top: -4px;
+}
+
+.route a .one {
+    position: absolute;
+    top: -2px;
+    left: -42px;
+    opacity: 1;
+}
+
+.route a .two {
+    position: absolute;
+    top: -2px;
+    right: -30px;
+    left: unset;
+    opacity: 0;
+    transition: 0.5s all ease;
+}
+
+.route a i {
+    display: inline-block;
+    font-size: 30px;
+    transition: 0.5s all ease;
+    line-height: 30px;
+}
+
+.candidate-card {
+    border: 2px dashed #dffedb;
+    padding: 25px 25px 25px;
+    border-radius: 5px;
+    position: relative;
+    margin-bottom: 30px;
+    width:100%;
+    object-fit:cover;
+}
+
+.candidate-card .left {
+    max-width: 240px;
+}
+
+.candidate-card .left h3 {
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.candidate-card .left h3 a {
+    color: #ffffff !important;
+    -webkit-transition: 0.7s;
+    transition: 0.7s;
+}
+
+.left h3 a:hover {
+    color: #fe4a55 !important;
+}
+
+.candidate-card .left span {
+    display: block;
+    color: #7d789b;
+    margin-bottom: 8px;
+}
+
+.candidate-card .left p {
+    margin-bottom: 25px;
+    color: #ffffff !important;
+    line-height: 1.8;
+}
+
+.candidate-card .left ul {
+    margin: 0;
+    padding: 0;
+}
+
+.candidate-card .left ul li {
+    list-style-type: none;
+    display: inline-block;
+    font-size: 12px;
+    color: #7f7f7f;
+    background-color: #ececec;
+    border-radius: 5px;
+    padding: 4px 8px;
+    margin-right: 3px;
+    margin-bottom: 6px;
+}
+
+.candidate-card .left .route {
+    text-align: left;
+    margin-left: 45px;
+    margin-top: 22px;
+}
+
+.candidate-card .left .route a {
+    color: #7068a3;
+    font-size: 15px;
+}
+
+.route a {
+    display: inline-block;
+    font-size: 17px;
+    position: relative;
+    text-decoration: none;
+    transition: 0.5s all ease;
+}
